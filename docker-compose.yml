@@ -1,0 +1,13 @@
+version: '2'
+services:
+  web:
+    image: "elviejokike/react-native-android"
+    privileged: true
+    entrypoint: "tail -f /dev/null"
+    devices:
+      - "/dev/bus/usb:/dev/bus/usb"
+    volumes:
+      - data:/home/react
+volumes:
+  data:
+    driver: local
