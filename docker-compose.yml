@@ -2,7 +2,7 @@ version: '2'
 services:
   web:
     privileged: true
-    image: "android_emu"
+    image: "pinfake/android-emulator"
     ports: 
       - "2022:22"
       - "5037:5037"

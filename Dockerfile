@@ -13,5 +13,7 @@ RUN cd /tmp && \
 RUN echo "y" | /opt/android-sdk-linux/tools/android update sdk --no-ui --force -a --filter platform-tools,android-23,build-tools-23,sys-img-x86-android-23
 ENV ANDROID_SDK_HOME=/opt/android-sdk-linux/
 ENV ANDROID_HOME=/opt/android-sdk-linux/
-#RUN echo "n" | /opt/android-sdk-linux/tools/android create avd --force -n test -t android-23 -b default/x86
+RUN echo "n" | /opt/android-sdk-linux/tools/android create avd --force -n nexus -t android-23 -b default/x86
+COPY avd/config.ini /opt/android-sdk-linux/.android/avd/nexus.avd/
+COPY scripts/run-emulator.sh /root
 ENTRYPOINT /usr/sbin/sshd -D
