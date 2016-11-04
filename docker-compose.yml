@@ -2,7 +2,7 @@ version: '2'
 services:
   web:
     privileged: true
-    image: "pinfake/android-emulator"
+    image: "pinfake/docker-react-native-android"
     ports: 
       - "2022:22"
       - "5037:5037"
